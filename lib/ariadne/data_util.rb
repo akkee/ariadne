@@ -4,9 +4,9 @@ module DataUtil
   def self.init_redis_cli(redis_obj: nil)
     raise "Redis object not found!" if redis_obj.nil?
     @redis_cli = redis_obj
-  rescue StandardError => e
-    puts 'From 1'
-    puts e
+  # rescue StandardError => e
+  #   puts 'From 1'
+  #   puts e
   end
 
   # => id: get data for for given id
@@ -19,9 +19,9 @@ module DataUtil
     keys.compact!
     redis_data = (@redis_cli.mget keys)
     redis_data
-  rescue StandardError => e
-    puts 'From 2'
-    puts e
+  # rescue StandardError => e
+  #   puts 'From 2'
+  #   puts e
   end
 
   # => options: specify the data to be inserted in redis

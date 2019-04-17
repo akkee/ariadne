@@ -17,8 +17,8 @@ module Ariadne
   #   for each different app.
   def self.get_app_name(app_name: nil)
     app_name ||= ( ENV['APP_NAME'] || '' )
-  rescue StandardError => e
-    puts "Can't connect to the Redis databse! Object Undefined!"
+  # rescue StandardError => e
+  #   puts "Can't connect to the Redis databse! Object Undefined!"
   end
 
   DataUtil.init_redis_cli(redis_obj: Redis.new(url: ENV['REDIS_URL']))
@@ -30,18 +30,18 @@ module Ariadne
     raise 'Please specify data to be inserted for Ariadne.insert_data method!' if options.empty?
     raise 'Please specify id to be passed for Ariadne.insert_data method!' if options['id'].nil? || options['id'].size == 0
     DataUtil.insert_data_in_redis(options: options, app_name: get_app_name(app_name: app_name))
-  rescue StandardError => e
-    puts e
-    e
+  # rescue StandardError => e
+  #   puts e
+  #   e
   end
 
   # => id: id for which the data is needed to be retirvied from db
   # This method will return data as a JSON string
   def self.get_data(id: nil, app_name: nil)
     DataUtil.get_data_from_redis(id: id, app_name: get_app_name(app_name: app_name))
-  rescue StandardError => e
-    puts e
-    e
+  # rescue StandardError => e
+  #   puts e
+  #   e
   end
 
   # This method will return the data only if the time difference is more than
