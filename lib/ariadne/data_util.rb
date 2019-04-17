@@ -5,6 +5,7 @@ module DataUtil
     raise "Redis object not found!" if redis_obj.nil?
     @redis_cli = redis_obj
   rescue StandardError => e
+    puts 'From 1'
     puts e
   end
 
@@ -19,6 +20,7 @@ module DataUtil
     redis_data = (@redis_cli.mget keys)
     redis_data
   rescue StandardError => e
+    puts 'From 2'
     puts e
   end
 
