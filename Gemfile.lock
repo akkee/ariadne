@@ -5,6 +5,7 @@ PATH
       fakeredis
       hiredis
       redis
+      redis-namespace
 
 GEM
   remote: https://rubygems.org/
@@ -14,9 +15,9 @@ GEM
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     docile (1.1.5)
-    fakeredis (0.5.0)
-      redis (~> 3.0)
-    hiredis (0.6.1)
+    fakeredis (0.7.0)
+      redis (>= 3.2, < 5.0)
+    hiredis (0.6.3)
     json (2.0.2)
     method_source (0.8.2)
     minitest (5.8.4)
@@ -28,7 +29,9 @@ GEM
       byebug (~> 8.0)
       pry (~> 0.10)
     rake (10.4.2)
-    redis (3.3.0)
+    redis (4.1.0)
+    redis-namespace (1.6.0)
+      redis (>= 3.0.4)
     simplecov (0.12.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -49,4 +52,4 @@ DEPENDENCIES
   simplecov
 
 BUNDLED WITH
-   1.13.2
+   1.17.3

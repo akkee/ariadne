@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency     'redis'
   spec.add_runtime_dependency     'hiredis'
   spec.add_runtime_dependency     'fakeredis'
+  spec.add_runtime_dependency     'redis-namespace'
 end
